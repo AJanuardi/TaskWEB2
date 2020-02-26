@@ -1,0 +1,55 @@
+﻿@page
+@model AdminModel
+@{
+    ViewData["Title"] = "Administrator Page";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+<div class="text-center">
+<h1>@ViewData["Title"]</h1>
+</div>
+<br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Judul</th>
+        <th>Publisher</th>
+        <th>Created</th>
+        <th>Action</th>
+    </tr>
+@{
+    ViewBag.data = ViewData["Data"];
+    ViewBag.warning = ViewData["Warning"];
+    var x = ViewBag.data;
+    var y = ViewBag.warning;
+    @y
+    if (ViewBag.data != null)
+    {
+    foreach (var i in x)
+    {
+        <tr>
+            <td>@i.id</td>
+            <td>@i.judul</td>
+            <td>@i.publisher</td>
+            <td>@i.created</td>
+            <td>
+                <button id="btn-a" type="button" class="btn btn-success" value="update" onclick="location.href='/Index'">Edit</button>
+                <button id="btn-b" type="button" class="btn btn-danger" value="@i.id" onclick="javascript:checkout(this)">Remove</button>
+            </td>
+        </tr>
+    }
+    }
+}
+</table>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+function checkout(btn) {
+    var id = document.getElementById("btn-b").value;
+    location.href='/Admin?id='+id;
+}
+</script>
