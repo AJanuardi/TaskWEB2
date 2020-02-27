@@ -1,8 +1,11 @@
 ﻿@page
 @model AdminModel
 @{
-    ViewData["Title"] = "Administrator Page";
+  Layout = "_LayoutAdmin";
+  ViewData["Title"] = "Administrator Page";
 }
+<button id="btn" class="btn btn-primary" onclick="location.href='/Add'">Add</button>
+
 <div class="container">
     <div class="row">
         <div class="col-md-1"></div>
@@ -15,6 +18,8 @@
     <tr>
         <th>Id</th>
         <th>Judul</th>
+        <th>Highlight</th>
+        <th>Body</th>
         <th>Publisher</th>
         <th>Created</th>
         <th>Action</th>
@@ -32,11 +37,16 @@
         <tr>
             <td>@i.id</td>
             <td>@i.judul</td>
+            <td>@i.highlight</td>
+            <td>@i.body</td>
             <td>@i.publisher</td>
             <td>@i.created</td>
             <td>
-                <button id="btn-a" type="button" class="btn btn-success" value="update" onclick="location.href='/Index'">Edit</button>
-                <button id="btn-b" type="button" class="btn btn-danger" value="@i.id" onclick="javascript:checkout(this)">Remove</button>
+                <form method="POST">
+                <input type="hidden" name="id" value="remove-@i.id">
+                <button id="btn" class="btn btn-danger">Delete</button>
+                </form>
+                <button data-id="@i.id" class="btn btn-warning" id="edit-@i.id" data-judul="@i.judul" data-highlight="@i.highlight" data-body="@i.body" data-publisher="@i.publisher" data-toggle="modal" data-target="#exampleModal">Edit</button>
             </td>
         </tr>
     }
@@ -47,9 +57,52 @@
 </div>
 </div>
 
-<script type="text/javascript">
-function checkout(btn) {
-    var id = document.getElementById("btn-b").value;
-    location.href='/Admin?id='+id;
-}
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document" >
+        <div class="modal-content" style="width:500px;height:640px">
+          <div class="modal-header">
+            <h4 class="modal-title"><b>Update Data</b></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="POST">
+          <div class="modal-body text-center">
+            <label for="title"><b>Title</b></label><br>
+            <input type="text" name="edit" value="edit-" hidden>
+            <input type="text" name="id" id="id1" class="form-control" value="" hidden>
+            <input type="text" name="judul" id="title1" class="form-control">
+            <br><br>
+            <label for="description"><b>Highlight</b></label><br>
+            <input type="text"  name="highlight" id="highlight1" class="form-control">
+            <br><br>
+            <label for="image"><b>Body</b></label><br>
+            <input type="text" name="body" id="body1" class="form-control">
+            <br><br>
+            <label for="image"><b>Published</b></label><br>
+            <input type="text" name="publisher" id="published1" class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: red;color:white;">Close</button>
+            <button type="submit" class="btn btn-primary" id="savechanges">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous">
+    </script>
+<script>
+    $(document).ready(function(){
+        console.log('Masuk Sini')
+        $('#exampleModal').on('show.bs.modal', function (e) {
+        $('#id1').val($(e.relatedTarget).data('id'))
+        $('#title1').val($(e.relatedTarget).data('judul'))
+        $('#highlight1').val($(e.relatedTarget).data('highlight'))
+        $('#body1').val($(e.relatedTarget).data('body'))
+        $('#published1').val($(e.relatedTarget).data('publisher'))
+    })
+})
 </script>

@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using TaskWEB2.Data;
+using TaskWEB2.Models;
 
 namespace TaskWEB2.Pages
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Supervisor")]
     public class AdminModel : PageModel
     {
         private readonly ILogger<AdminModel> _logger;
@@ -32,27 +33,42 @@ namespace TaskWEB2.Pages
             _signInManager = signInManager;
             _appDbContext = applicationDbContext;
         }
+
         public void OnGet()
         {
-            if (_userManager.GetUserId(User) == "176caa26-a9d0-4692-8d8b-74c5de220e4a")
-            {
                 var x = from i in _appDbContext.Articles select i;
                 ViewData["Data"] = x;
-            }
-            else
-            {
-                ViewData["Data"] = null;
-                ViewData["Warning"] = "You Dont Have Access";
-            }
         }
 
-        public void OnGetDelete(int id)
+        public IActionResult OnPost(string id, string judul, string highlight, string body, string publisher, string edit)
         {
             Console.WriteLine("=================================");
             Console.WriteLine(id);
-            var x = _appDbContext.Articles.Find(id);
-            _appDbContext.Remove(x);
-            _appDbContext.SaveChanges();
+            Console.WriteLine(judul);
+            Console.WriteLine(highlight);
+            Console.WriteLine(body);
+            Console.WriteLine(publisher);
+            Console.WriteLine(edit);
+            if (id.Contains("remove"))
+            {
+                var text = id.Replace("remove-","");
+                var angka = Convert.ToInt32(text);
+                var x = _appDbContext.Articles.Find(angka);
+                _appDbContext.Remove(x);
+                _appDbContext.SaveChanges();
+            }
+            else if (edit.Contains("edit"))
+            {
+                var angka = Convert.ToInt32(id);
+                var x = _appDbContext.Articles.Find(angka);
+                x.judul = judul;
+                x.highlight = highlight;
+                x.body = body;
+                x.publisher = publisher;
+                x.created = DateTime.Now;
+                _appDbContext.SaveChanges();
+            }
+            return RedirectToPage("Admin");
         }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TaskWEB2.Migrations
 {
-    public partial class datalagibroya : Migration
+    public partial class datalagibroyaokesipyalagi : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,6 +61,22 @@ namespace TaskWEB2.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Comments",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    articleid = table.Column<int>(nullable: false),
+                    username = table.Column<string>(nullable: true),
+                    comment = table.Column<string>(nullable: true),
+                    created = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comments", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -228,6 +244,9 @@ namespace TaskWEB2.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

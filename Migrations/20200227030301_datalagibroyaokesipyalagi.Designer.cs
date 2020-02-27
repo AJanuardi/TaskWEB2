@@ -10,8 +10,8 @@ using TaskWEB2.Data;
 namespace TaskWEB2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200225073417_datalagibroya")]
-    partial class datalagibroya
+    [Migration("20200227030301_datalagibroyaokesipyalagi")]
+    partial class datalagibroyaokesipyalagi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -246,6 +246,30 @@ namespace TaskWEB2.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Articles");
+                });
+
+            modelBuilder.Entity("TaskWEB2.Models.Comment", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("articleid")
+                        .HasColumnType("int");
+
+                    b.Property<string>("comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

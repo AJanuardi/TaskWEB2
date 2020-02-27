@@ -1,0 +1,17 @@
+﻿@page
+@model IndexUserModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@{
+    ViewBag.items = ViewData["Data"];
+    var x = ViewBag.items;
+    foreach (var i in x)
+    {
+        <h4>@i.judul</h4>
+        <h5>@i.highlight</h5>
+        <h6>By @i.publisher at @i.created</h6>
+        <button id="btn" class="btn btn-primary" onclick="window.location.href='/View?id=@i.id'">Details</button>
+    }
+}

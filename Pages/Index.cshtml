@@ -3,12 +3,3 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-@{
-    ViewBag.items = ViewData["Data"];
-    var x = ViewBag.items;
-    foreach (var i in x)
-    {
-        <h5>@i.judul</h5>
-    }
-}

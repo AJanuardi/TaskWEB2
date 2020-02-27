@@ -1,0 +1,22 @@
+﻿@page
+@model AddModel
+@{
+    Layout ="_LayoutAdmin";
+    ViewData["Title"] = "Administrator Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+            <form method="POST">
+                    <input name="judul" id="judul">
+                    <input name="highlight" id="highlight">
+                    <input name="body" id="body">
+                    <input name="publisher" id="publisher">
+                    <input name="created" id="created">
+                    <button id="btn" class="btn btn-danger">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

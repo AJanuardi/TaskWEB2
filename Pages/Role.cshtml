@@ -1,0 +1,55 @@
+﻿@page
+@model RoleModel
+@{
+    Layout ="_LayoutAdmin";
+    ViewData["Title"] = "Home page";
+}
+@{
+    <h4>List of Role</h4>
+    ViewBag.role = ViewData["Role"];
+    foreach (var i in ViewBag.role)
+    {
+        <h6>@i.Id</h6>
+        <h6>@i.Name</h6>
+    }
+    <form method="POST">
+        <label>Add Role</label>
+        <input type="text" name="role_name" value="">
+        <input type="submit" class="btn btn-success">
+    </form>
+    <form method="POST">
+        <label>Delete Role</label>
+        <select type="text" name="delete_id">
+        @{
+        ViewBag.role = ViewData["Role"];
+        foreach (var i in ViewBag.role)
+            {
+                <option value="@i.Id">@i.Name</option>
+            }
+        }
+        <input type="submit" class="btn btn-danger">
+        </select>
+    </form>
+    <form method="POST">
+        <label>Assign Role</label>
+        <select id="name" name="user_id">
+        @{
+            ViewBag.user = ViewData["User"];
+            foreach (var i in ViewBag.user)
+            {
+            <option value="@i.Id">@i.UserName</option>
+            }
+        }
+        </select>
+        <select id="name" name="roleuser">
+        @{
+            ViewBag.role = ViewData["Role"];
+            foreach (var i in ViewBag.role)
+            {
+            <option value="@i.Name">@i.Name</option>
+            }
+        }
+        </select>
+        <input type="submit" class="btn btn-primary">
+    </form>
+}

@@ -18,22 +18,37 @@ namespace TaskWEB2.Pages
         private readonly UserManager<IdentityUser> _userManager;
         // Inject SignInManager
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         public IndexModel(
             ILogger<IndexModel> logger,
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
+            RoleManager<IdentityRole> roleManager,
             ApplicationDbContext applicationDbContext
         )
         {
             _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _appDbContext = applicationDbContext;
         }
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            var x = from i in _appDbContext.Articles select i;
-            ViewData["Data"] = x;
+            var userid = _userManager.GetUserId(User);
+            var userrole = from i in _appDbContext.UserRoles where i.UserId == userid select i.RoleId;
+            foreach (var i in userrole)
+            {
+            if (i == "86453ab0-9663-4641-8876-2c8fe1e7f606")
+            {
+                return new RedirectToPageResult("IndexAdmin");
+            }
+            if (i == "8979ec23-a4de-40b2-85c3-b465f394b1a5")
+            {
+                return new RedirectToPageResult("IndexAdmin");   
+            }
+            }
+            return new RedirectToPageResult("IndexUser");
         }
     }
 }
