@@ -39,11 +39,11 @@ namespace TaskWEB2.Pages
             var userrole = from i in _appDbContext.UserRoles where i.UserId == userid select i.RoleId;
             foreach (var i in userrole)
             {
-            if (i == "86453ab0-9663-4641-8876-2c8fe1e7f606")
+            if (i == "8d8a6be5-70b7-49d4-861e-82ce45ba2fa7")
             {
                 return new RedirectToPageResult("IndexAdmin");
             }
-            if (i == "8979ec23-a4de-40b2-85c3-b465f394b1a5")
+            if (i == "d8c75bb8-f5a5-42a0-afdf-d197dc8a5a60")
             {
                 return new RedirectToPageResult("IndexAdmin");   
             }

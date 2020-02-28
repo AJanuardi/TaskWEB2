@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TaskWEB2.Migrations
 {
-    public partial class datalagibroyaokesipyalagi : Migration
+    public partial class database : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,6 +17,8 @@ namespace TaskWEB2.Migrations
                     highlight = table.Column<string>(nullable: true),
                     body = table.Column<string>(nullable: true),
                     publisher = table.Column<string>(nullable: true),
+                    category = table.Column<string>(nullable: true),
+                    picture = table.Column<string>(nullable: true),
                     created = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -125,8 +127,8 @@ namespace TaskWEB2.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(nullable: false),
+                    ProviderKey = table.Column<string>(nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: false)
                 },
@@ -170,8 +172,8 @@ namespace TaskWEB2.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
-                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    Name = table.Column<string>(maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
                     Value = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

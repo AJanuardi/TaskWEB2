@@ -36,8 +36,6 @@ namespace TaskWEB2.Pages
 
         public IActionResult OnPost(int id, string judul, string highlight, string body, string publisher, DateTime created)
         {
-            Console.WriteLine("================  ================");
-            Console.WriteLine(id);
             var x = _appDbContext.Articles.Find(id);
             x.judul = judul;
             x.highlight = highlight;

@@ -42,13 +42,6 @@ namespace TaskWEB2.Pages
 
         public IActionResult OnPost(string id, string judul, string highlight, string body, string publisher, string edit)
         {
-            Console.WriteLine("=================================");
-            Console.WriteLine(id);
-            Console.WriteLine(judul);
-            Console.WriteLine(highlight);
-            Console.WriteLine(body);
-            Console.WriteLine(publisher);
-            Console.WriteLine(edit);
             if (id.Contains("remove"))
             {
                 var text = id.Replace("remove-","");

@@ -38,13 +38,13 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Microsoft.AspNetCore.Authentication.Twitter/3.0.0": {
+      "Microsoft.AspNetCore.Authentication.Twitter/3.1.2": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -1519,16 +1519,17 @@
         "microsoft.aspnetcore.authentication.microsoftaccount.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.Twitter/3.0.0": {
-      "sha512": "6hlTQ3GzUxaHTqPhISCoK7aoU7LDz4IONTZzJPJ3WCGyzfop/bgProD21rvSoSW90blWZKatFZohgTLPfrS/5w==",
+    "Microsoft.AspNetCore.Authentication.Twitter/3.1.2": {
+      "sha512": "1aS5H7fnivYVTIBGJ16Ym/nUfK0L79pQb9Vd8lDq9gpeiVX6E1DYVpPJKtdJrYLzL0J1OPagIOeuvFd+6BFJMw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.twitter/3.0.0",
+      "path": "microsoft.aspnetcore.authentication.twitter/3.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Twitter.dll",
-        "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Twitter.xml",
-        "microsoft.aspnetcore.authentication.twitter.3.0.0.nupkg.sha512",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.xml",
+        "microsoft.aspnetcore.authentication.twitter.3.1.2.nupkg.sha512",
         "microsoft.aspnetcore.authentication.twitter.nuspec"
       ]
     },
@@ -5490,7 +5491,7 @@
       "Microsoft.AspNetCore.Authentication.Facebook >= 3.1.2",
       "Microsoft.AspNetCore.Authentication.Google >= 3.1.2",
       "Microsoft.AspNetCore.Authentication.MicrosoftAccount >= 3.1.2",
-      "Microsoft.AspNetCore.Authentication.Twitter >= 3.0.0",
+      "Microsoft.AspNetCore.Authentication.Twitter >= 3.1.2",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.1",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.1",
@@ -5547,7 +5548,7 @@
           },
           "Microsoft.AspNetCore.Authentication.Twitter": {
             "target": "Package",
-            "version": "[3.0.0, )"
+            "version": "[3.1.2, )"
           },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",

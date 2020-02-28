@@ -3,31 +3,128 @@
 @{
   ViewData["Title"] = "Administrator Page";
 }
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+</style>
+</head>
+<br>
+<br>
+<body>
 @{
   ViewBag.articles = ViewData["Articles"];
   var x = ViewBag.articles;
-  @x.judul
-  @x.publisher
+  <div class="text-left">
+  <p>Published: @x.created</p>
+  </div>
+  <div class="text-center">
+  </div>
+  <br>
+  <div class="text-center">
+  <h1>@x.judul</h1>
+  </div>
+  <br>
+  <div style="text-align: justify;">
+  <p>@x.body</p>
+  </div>
+  <br>
+  <div class="text-right">
+  <h6>Author: @x.publisher</h6>
+  </div>
   <br>
   <br>
+}
+<div>
+  @{
+  <h2>Leave a Comment:</h2>
   ViewBag.comment = ViewData["Comment"];
   var z = ViewBag.comment;
-  foreach (var i in z)
-  {
-    <h5>@i.username</h5>
-    <h5>@i.comment</h5>
-  }
-  <br>
-  <br>
   ViewBag.user = ViewData["User"];
   var y = ViewBag.user;
+  foreach (var i in z)
+  {
+    if(y == "8d8a6be5-70b7-49d4-861e-82ce45ba2fa7" || y == "d8c75bb8-f5a5-42a0-afdf-d197dc8a5a60")
+    {
+    <div class="container darker">
+    <p>@i.username</p>
+    <img src="https://www.phplivesupport.com/pics/icons/avatars/public/avatar_7.png" alt="Avatar" style="width:100%;">
+    <p>@i.comment</p>
+    <span class="time-right">@i.created</span>
+    </div>
+    
+    }
+    else
+    {
+    <div class="container">
+    <p>@i.username</p>
+    <img src="https://www.phplivesupport.com/pics/icons/avatars/public/avatar_71.png" alt="Avatar" style="width:100%;">
+    <p>@i.comment</p>
+    <span class="time-right">@i.created</span>
+    </div>
+    }
+  }
+  <br>
   if(y != null)
   {
+  <div>
   <form method="POST">
     <input type="hidden" name="id" value="@x.id">
     <input type="hidden" name="user" value="@y">
     <input type="text" name="comment" value="">
     <input type="submit" class="btn btn-success">
   </form>
+  </div>
   }
 }
+</body>
+</div>
+<br>

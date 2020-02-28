@@ -68,7 +68,6 @@ D:\Users\bsi50130\Downloads\TaskWEB2\obj\Debug\netcoreapp3.1\TaskWEB2.RazorCoreG
 D:\Users\bsi50130\Downloads\TaskWEB2\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\Users\bsi50130\Downloads\TaskWEB2\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
 D:\Users\bsi50130\Downloads\TaskWEB2\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
-D:\Users\bsi50130\Downloads\TaskWEB2\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_LoginPartial.cshtml.g.cs
 D:\Users\bsi50130\Downloads\TaskWEB2\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\Users\bsi50130\Downloads\TaskWEB2\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 D:\Users\bsi50130\Downloads\TaskWEB2\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs

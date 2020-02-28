@@ -20,16 +20,19 @@ namespace TaskWEB2.Pages
         private readonly UserManager<IdentityUser> _userManager;
         // Inject SignInManager
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         public ViewModel(
             ILogger<ViewModel> logger,
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
+            RoleManager<IdentityRole> roleManager,
             ApplicationDbContext applicationDbContext
         )
         {
             _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _appDbContext = applicationDbContext;
         }
 
@@ -39,7 +42,6 @@ namespace TaskWEB2.Pages
             ViewData["Articles"] = x;
             var y = _userManager.GetUserName(User);
             ViewData["User"] = y;
-            Console.WriteLine(y);
             var z = from i in _appDbContext.Comments where (i.articleid == id) select i;
             ViewData["Comment"] = z;
         }

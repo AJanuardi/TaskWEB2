@@ -162,12 +162,10 @@ namespace TaskWEB2.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -204,12 +202,10 @@ namespace TaskWEB2.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -229,6 +225,9 @@ namespace TaskWEB2.Migrations
                     b.Property<string>("body")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("category")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("created")
                         .HasColumnType("datetime2");
 
@@ -236,6 +235,9 @@ namespace TaskWEB2.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("judul")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("picture")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("publisher")

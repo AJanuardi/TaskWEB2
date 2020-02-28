@@ -27,7 +27,7 @@
           "Microsoft.AspNetCore.Authentication.Facebook": "3.1.2",
           "Microsoft.AspNetCore.Authentication.Google": "3.1.2",
           "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "3.1.2",
-          "Microsoft.AspNetCore.Authentication.Twitter": "3.0.0",
+          "Microsoft.AspNetCore.Authentication.Twitter": "3.1.2",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.1",
           "Microsoft.AspNetCore.Identity.UI": "3.1.1",
@@ -339,15 +339,15 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.Twitter/3.0.0": {
+      "Microsoft.AspNetCore.Authentication.Twitter/3.1.2": {
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Twitter.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.46502"
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {
+            "assemblyVersion": "3.1.2.0",
+            "fileVersion": "3.100.220.6801"
           }
         },
         "compile": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.1": {
@@ -3020,12 +3020,12 @@
       "path": "microsoft.aspnetcore.authentication.microsoftaccount/3.1.2",
       "hashPath": "microsoft.aspnetcore.authentication.microsoftaccount.3.1.2.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication.Twitter/3.0.0": {
+    "Microsoft.AspNetCore.Authentication.Twitter/3.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6hlTQ3GzUxaHTqPhISCoK7aoU7LDz4IONTZzJPJ3WCGyzfop/bgProD21rvSoSW90blWZKatFZohgTLPfrS/5w==",
-      "path": "microsoft.aspnetcore.authentication.twitter/3.0.0",
-      "hashPath": "microsoft.aspnetcore.authentication.twitter.3.0.0.nupkg.sha512"
+      "sha512": "sha512-1aS5H7fnivYVTIBGJ16Ym/nUfK0L79pQb9Vd8lDq9gpeiVX6E1DYVpPJKtdJrYLzL0J1OPagIOeuvFd+6BFJMw==",
+      "path": "microsoft.aspnetcore.authentication.twitter/3.1.2",
+      "hashPath": "microsoft.aspnetcore.authentication.twitter.3.1.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.1": {
       "type": "package",
