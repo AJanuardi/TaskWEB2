@@ -4,32 +4,57 @@
     Layout ="_LayoutAdmin";
     ViewData["Title"] = "Home page";
 }
-@{
-    <h4>List of Role</h4>
-    ViewBag.role = ViewData["Role"];
-    foreach (var i in ViewBag.role)
-    {
-        <h6>@i.Id</h6>
-        <h6>@i.Name</h6>
-    }
-    <form method="POST">
-        <label>Add Role</label>
-        <input type="text" name="role_name" value="">
-        <input type="submit" class="btn btn-success">
-    </form>
-    <form method="POST">
-        <label>Delete Role</label>
-        <select type="text" name="delete_id">
-        @{
-        ViewBag.role = ViewData["Role"];
-        foreach (var i in ViewBag.role)
-            {
-                <option value="@i.Id">@i.Name</option>
-            }
-        }
-        <input type="submit" class="btn btn-danger">
-        </select>
-    </form>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-9">
+                <div class="text-center">
+                <h4>Available Role</h4>
+                @{
+                ViewBag.role = ViewData["Role"];
+                foreach (var i in ViewBag.role)
+                {
+                    <h6>@i.Id @i.Name</h6>
+                }
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form method="POST">
+                    <label>Add Role</label>
+                    <input type="text" name="role_name" value="">
+                    <input type="submit" class="btn btn-success">
+                </form>
+                <br>
+            </div>
+            <div class="col-md-6">
+                <div class="text-right">
+                <form method="POST">
+                    <label>Delete Role</label>
+                    <select type="text" name="delete_id">
+                    @{
+                    ViewBag.role = ViewData["Role"];
+                    foreach (var i in ViewBag.role)
+                        {
+                            <option value="@i.Id">@i.Name</option>
+                        }
+                    }
+                    <input type="submit" class="btn btn-danger">
+                    </select>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
     <form method="POST">
         <label>Assign Role</label>
         <select id="name" name="user_id">
@@ -52,4 +77,49 @@
         </select>
         <input type="submit" class="btn btn-primary">
     </form>
-}
+    <br>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                    <div class="text-center">
+                    <h4>List of User Role</h4>
+                    @{
+                        ViewBag.userole = ViewData["UserRole"];
+                        var x = ViewBag.userole;
+                        foreach (var i in x)
+                        {
+                            if(i.RoleId == "57cef437-5ec8-4dc6-bda8-5ec20be708d3")
+                            {
+                                <p>@i.UserId role as Pengunjung</p>
+                            }
+                            else if(i.RoleId == "8d8a6be5-70b7-49d4-861e-82ce45ba2fa7")
+                            {
+                                <p>@i.UserId role as Admin</p>
+                            }
+                            else if(i.RoleId == "d8c75bb8-f5a5-42a0-afdf-d197dc8a5a60")
+                            {
+                                <p>@i.UserId role as Supervisor</p>
+                            }
+                        }
+                    }
+                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                <h4>List of User</h4>
+                @{
+                    ViewBag.user = ViewData["User"];
+                    var y = ViewBag.user;
+                    foreach (var i in y)
+                    {
+                        <p>@i.Id as @i.UserName</p>
+                    }
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+    

@@ -39,6 +39,8 @@ namespace TaskWEB2.Pages
         {
             var roles = _roleManager.Roles;
             var user = from i in _appDbContext.Users select i;
+            var userole = from i in _appDbContext.UserRoles select i;
+            ViewData["UserRole"] = userole;
             ViewData["Role"] = roles;
             ViewData["User"] = user;
         }

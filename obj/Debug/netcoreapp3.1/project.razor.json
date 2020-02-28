@@ -20506,11 +20506,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Users\\bsi50130\\Downloads\\TaskWEB2\\Pages\\Edit.cshtml",
-      "TargetPath": "Pages\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\Users\\bsi50130\\Downloads\\TaskWEB2\\Pages\\Add.cshtml",
       "TargetPath": "Pages\\Add.cshtml",
       "FileKind": "mvc"
